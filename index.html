@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#344769" />
+  <title>Chart the Course | NC School Directors Workshop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header" aria-label="Game header">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img">
+            <circle cx="32" cy="32" r="30" fill="#ffffff" opacity="0.14"></circle>
+            <path d="M18 39c10-1 16-8 18-19 6 4 10 9 11 15 1 8-5 14-13 15-7 1-13-3-16-11Z" fill="#DEA627"></path>
+            <path d="M36 20c7 2 12 6 15 12l-8 1c-2-5-4-9-7-13Z" fill="#ffffff"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="eyebrow">North Central College · Academic Affairs</p>
+          <h1>Chart the Course</h1>
+        </div>
+      </div>
+      <button id="restartBtn" class="text-button" type="button" hidden>Restart</button>
+    </header>
+
+    <main id="app" class="game-card" aria-live="polite">
+      <section id="startScreen" class="screen active" data-screen="start">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">A five-minute leadership simulation</p>
+            <h2>Your destination is clear. The route is yours to chart.</h2>
+            <p>
+              You are leading a School through an academic year. Four moments will ask you to make choices about student success, faculty capacity, collaboration, and momentum.
+            </p>
+            <p>
+              There is no perfect route. Strong decisions often involve tradeoffs, relationships, and knowing when to act locally or seek support.
+            </p>
+            <button id="beginBtn" class="primary-button" type="button">Begin the Journey</button>
+          </div>
+
+          <aside class="destination-card" aria-label="Provost's priorities">
+            <div class="destination-icon" aria-hidden="true">⚑</div>
+            <h3>Destination: Provost's Priorities</h3>
+            <ol>
+              <li>Improve student persistence and retention.</li>
+              <li>Expand equitable access to high-impact learning.</li>
+              <li>Strengthen career readiness and post-graduate outcomes.</li>
+            </ol>
+          </aside>
+        </div>
+      </section>
+
+      <section id="gameScreen" class="screen" data-screen="game" aria-labelledby="scenarioTitle">
+        <div class="journey-wrap">
+          <div class="journey-meta">
+            <span id="progressText">1 of 4</span>
+            <span id="priorityTag" class="priority-tag">Priority</span>
+          </div>
+          <div class="route" aria-hidden="true">
+            <div class="route-line"></div>
+            <div id="routeFill" class="route-fill"></div>
+            <div id="boat" class="boat" aria-hidden="true">
+              <svg class="boat-svg" viewBox="0 0 220 120" role="img" aria-label="Sailboat with cardinal bird">
+                <g>
+                  <path d="M18 84 C40 94, 70 98, 105 98 C140 98, 170 94, 196 84 L180 106 H32 Z" fill="#344769"></path>
+                  <path d="M88 24 L88 82" stroke="#7f8da5" stroke-width="4" stroke-linecap="round"></path>
+                  <path d="M90 26 L144 72 L90 72 Z" fill="#ffffff" stroke="#d9dee7" stroke-width="2"></path>
+                  <path d="M88 30 L48 68 L88 68 Z" fill="#DEA627" opacity="0.95"></path>
+                  <path d="M26 84 H194" stroke="#9ec3d8" stroke-width="5" stroke-linecap="round"></path>
+                  <path d="M154 44 C160 38, 171 37, 179 44 C176 40, 178 33, 185 32 C180 30, 178 27, 179 22 C174 24, 168 24, 163 22 C165 27, 162 32, 155 34 C159 35, 161 39, 160 42 Z" fill="#A6192E"></path>
+                  <circle cx="181" cy="38" r="4" fill="#111827"></circle>
+                  <circle cx="182" cy="37" r="1.2" fill="#ffffff"></circle>
+                  <path d="M186 40 L196 43 L186 46 Z" fill="#F5A623"></path>
+                  <path d="M166 38 C160 40, 157 45, 156 50" stroke="#7f8da5" stroke-width="3" stroke-linecap="round"></path>
+                </g>
+              </svg>
+            </div>
+            <div class="island">🌴</div>
+          </div>
+        </div>
+
+        <div class="dashboard" aria-label="Leadership indicators">
+          <article class="meter-card">
+            <div class="meter-heading"><span>Momentum</span><strong id="momentumValue">50</strong></div>
+            <div class="meter"><div id="momentumBar" class="meter-fill"></div></div>
+          </article>
+          <article class="meter-card">
+            <div class="meter-heading"><span>Faculty Capacity</span><strong id="capacityValue">55</strong></div>
+            <div class="meter"><div id="capacityBar" class="meter-fill"></div></div>
+          </article>
+          <article class="meter-card">
+            <div class="meter-heading"><span>Student Impact</span><strong id="impactValue">50</strong></div>
+            <div class="meter"><div id="impactBar" class="meter-fill"></div></div>
+          </article>
+          <article class="meter-card">
+            <div class="meter-heading"><span>Collaboration</span><strong id="collaborationValue">50</strong></div>
+            <div class="meter"><div id="collaborationBar" class="meter-fill"></div></div>
+          </article>
+        </div>
+
+        <section class="scenario-panel">
+          <p id="scenarioNumber" class="kicker">Decision 1</p>
+          <h2 id="scenarioTitle">Scenario title</h2>
+          <p id="scenarioText" class="scenario-text"></p>
+          <div id="choices" class="choices" role="group" aria-label="Choose a response"></div>
+        </section>
+
+
+
+        <div id="eventModal" class="event-modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="eventTitle" aria-describedby="eventBody">
+          <div class="event-card">
+            <p class="event-kicker">Trail Event</p>
+            <h3 id="eventTitle">You get dysentery.</h3>
+            <p id="eventBody">Not literally. But things have taken a sudden turn.</p>
+            <button id="eventContinueBtn" class="primary-button compact" type="button">Continue</button>
+          </div>
+        </div>
+        <section id="feedbackPanel" class="feedback-panel" hidden>
+          <div>
+            <p class="feedback-label">What happens next</p>
+            <p id="feedbackEvent" class="feedback-event" hidden></p>
+            <p id="feedbackText"></p>
+          </div>
+          <button id="continueBtn" class="primary-button compact" type="button">Continue</button>
+        </section>
+      </section>
+
+      <section id="endScreen" class="screen" data-screen="end" aria-labelledby="resultTitle">
+        <div class="result-layout">
+          <div class="result-main">
+            <p class="kicker">Your course</p>
+            <h2 id="resultTitle">Collaborative Navigator</h2>
+            <p id="resultDescription" class="result-description"></p>
+
+            <div class="reflection-card">
+              <p class="reflection-label">Workshop reflection</p>
+              <p>As you think about your own School, where do you see the greatest opportunity to create momentum this year?</p>
+            </div>
+
+            <p class="transition-line">Every School has a different route. Now map yours.</p>
+            <button id="sailboatBtn" class="primary-button" type="button">Continue to the Sailboat Exercise</button>
+          </div>
+
+          <aside class="final-scorecard" aria-label="Final indicators">
+            <h3>Where you finished</h3>
+            <div id="finalMeters"></div>
+            <p class="score-note">The indicators show tradeoffs, not a grade. Your route reflects the choices you prioritized along the way.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="errorScreen" class="screen" data-screen="error">
+        <h2>We couldn't load the game.</h2>
+        <p id="errorText">Please make sure <code>scenarios.json</code> is in the same folder and that the game is being served from a web server.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>NC School Directors Workshop · Local browser experience · No participant data is collected.</p>
+    </footer>
+  </div>
+
+  <script src="game.js" defer></script>
+</body>
+</html>

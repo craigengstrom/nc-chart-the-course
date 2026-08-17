@@ -1,0 +1,235 @@
+{
+  "settings": {
+    "startingIndicators": {
+      "momentum": 50,
+      "capacity": 55,
+      "impact": 50,
+      "collaboration": 50
+    },
+    "sailboatUrl": ""
+  },
+  "scenarios": [
+    {
+      "id": "early-alert",
+      "priority": "Persistence & Retention",
+      "title": "The Early Alert",
+      "situation": "It is week four. Several gateway courses are showing higher-than-usual absences and missed assignments. Faculty care about the students, but everyone is already busy and the pattern is not identical across courses.",
+      "choices": [
+        {
+          "text": "Ask each faculty member to create an individual outreach plan and send you weekly updates.",
+          "feedback": "You generate activity quickly, but the added reporting consumes faculty time and produces several different approaches. Some students receive strong outreach while others receive overlapping messages.",
+          "effects": {
+            "momentum": 6,
+            "capacity": -12,
+            "impact": 4,
+            "collaboration": -4
+          },
+          "tags": [
+            "control"
+          ]
+        },
+        {
+          "text": "Bring a few faculty together with existing student-support partners to identify the pattern and pilot one targeted response.",
+          "feedback": "The group uses existing expertise, agrees on a focused intervention, and creates a clearer handoff between the School and student-support resources. The pilot stays small enough to learn from quickly.",
+          "effects": {
+            "momentum": 10,
+            "capacity": -4,
+            "impact": 12,
+            "collaboration": 12
+          },
+          "tags": [
+            "collaboration",
+            "experiment"
+          ]
+        },
+        {
+          "text": "Wait until the end of the semester so you have complete data before changing anything.",
+          "feedback": "You preserve faculty capacity and gain cleaner data, but the opportunity for an early intervention passes. The School learns useful information for next term rather than helping this cohort now.",
+          "effects": {
+            "momentum": -8,
+            "capacity": 5,
+            "impact": -7,
+            "collaboration": 0
+          },
+          "tags": [
+            "caution"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "high-impact",
+      "priority": "Equitable High-Impact Learning",
+      "title": "The High-Impact Opportunity",
+      "situation": "A community partner offers your School a promising project that could become a high-impact learning experience. The opportunity is exciting, but only a few faculty currently have the time and relationships needed to participate.",
+      "choices": [
+        {
+          "text": "Launch it broadly across the School this year so as many students as possible can participate immediately.",
+          "feedback": "The ambition is visible, but implementation strains the faculty who know the partner and leaves uneven support across sections. Access expands faster than the infrastructure needed to sustain it.",
+          "effects": {
+            "momentum": 12,
+            "capacity": -15,
+            "impact": 7,
+            "collaboration": -2
+          },
+          "tags": [
+            "speed"
+          ]
+        },
+        {
+          "text": "Start with a small, intentionally inclusive pilot and use what you learn to design a scalable model for next year.",
+          "feedback": "The pilot reaches fewer students at first, but the School can test logistics, identify access barriers, and build a model that more faculty can adopt with confidence.",
+          "effects": {
+            "momentum": 8,
+            "capacity": -3,
+            "impact": 10,
+            "collaboration": 7
+          },
+          "tags": [
+            "experiment",
+            "capacity"
+          ]
+        },
+        {
+          "text": "Ask the Dean and a campus partner to help identify resources, coordination, or compensation before committing to the project.",
+          "feedback": "Progress is slightly slower at the start, but you clarify what support is available and avoid making the opportunity dependent on unpaid extra labor from a few faculty members.",
+          "effects": {
+            "momentum": 4,
+            "capacity": 6,
+            "impact": 7,
+            "collaboration": 13
+          },
+          "tags": [
+            "collaboration",
+            "support"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "career-readiness",
+      "priority": "Career Readiness",
+      "title": "The Curriculum Conversation",
+      "situation": "Your School wants to strengthen career readiness. Faculty agree that students benefit from clearer connections between coursework and post-graduate possibilities, but colleagues differ on how directly career preparation belongs in the curriculum.",
+      "choices": [
+        {
+          "text": "Ask every program to add the same career-readiness assignment next semester.",
+          "feedback": "The School gains consistency quickly, but some faculty experience the requirement as disconnected from disciplinary goals. Compliance is high; ownership is mixed.",
+          "effects": {
+            "momentum": 9,
+            "capacity": -8,
+            "impact": 5,
+            "collaboration": -7
+          },
+          "tags": [
+            "control"
+          ]
+        },
+        {
+          "text": "Invite programs to identify where career readiness already exists, then choose one meaningful gap they want to strengthen.",
+          "feedback": "Faculty see that they are not starting from zero. Programs retain disciplinary ownership while connecting existing work more intentionally to a shared institutional priority.",
+          "effects": {
+            "momentum": 8,
+            "capacity": 1,
+            "impact": 10,
+            "collaboration": 10
+          },
+          "tags": [
+            "ownership",
+            "collaboration"
+          ]
+        },
+        {
+          "text": "Create a voluntary working group of the faculty who are already most enthusiastic about career readiness.",
+          "feedback": "The enthusiasts generate strong ideas, but the work risks staying concentrated among the already converted. You gain examples that could be useful if the group later creates pathways for broader participation.",
+          "effects": {
+            "momentum": 6,
+            "capacity": 2,
+            "impact": 4,
+            "collaboration": 4
+          },
+          "tags": [
+            "champions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "capacity",
+      "priority": "Enacting the Priorities",
+      "title": "One More Good Idea",
+      "situation": "Midyear, your School identifies a promising idea that connects directly to the priorities. Faculty can see its value, yet the semester already includes searches, advising demands, assessment work, and several program initiatives.",
+      "choices": [
+        {
+          "text": "Move ahead now. The idea is too important to lose momentum, and everyone can stretch a little more for one semester.",
+          "feedback": "The initiative starts quickly, but the hidden cost appears in workload, attention, and morale. Some colleagues disengage from the new work even though they support its purpose.",
+          "effects": {
+            "momentum": 12,
+            "capacity": -16,
+            "impact": 4,
+            "collaboration": -5
+          },
+          "tags": [
+            "speed"
+          ],
+          "eventTitle": "You get dysentery.",
+          "eventBody": "Not literally. But your inbox, calendar, and staffing plan all revolt at once."
+        },
+        {
+          "text": "Ask what can be stopped, simplified, delegated, or delayed so the new work has a realistic home in the School's priorities.",
+          "feedback": "The conversation requires choices, but it makes capacity visible. Faculty have a clearer sense of why the initiative matters and what will make room for it.",
+          "effects": {
+            "momentum": 7,
+            "capacity": 9,
+            "impact": 8,
+            "collaboration": 9
+          },
+          "tags": [
+            "capacity",
+            "ownership"
+          ]
+        },
+        {
+          "text": "Bring the idea to your Dean and identify whether another unit, resource, or partnership could reduce the local burden.",
+          "feedback": "You discover that part of the work can be supported elsewhere. The School still owns the academic direction, while the implementation becomes more feasible through shared support.",
+          "effects": {
+            "momentum": 6,
+            "capacity": 7,
+            "impact": 7,
+            "collaboration": 14
+          },
+          "tags": [
+            "support",
+            "collaboration"
+          ]
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "collaborative-navigator",
+      "title": "Collaborative Navigator",
+      "description": "You consistently looked for ways to connect people, expertise, and support before asking the School to carry the work alone. Your route treats collaboration as a capacity-building strategy, not an extra step.",
+      "rule": "collaboration"
+    },
+    {
+      "id": "capacity-steward",
+      "title": "Capacity Steward",
+      "description": "You paid close attention to whether good ideas had a realistic place to live. Your route protects the conditions that help colleagues sustain meaningful work over time.",
+      "rule": "capacity"
+    },
+    {
+      "id": "momentum-builder",
+      "title": "Momentum Builder",
+      "description": "You favored movement, visible progress, and opportunities to turn priorities into action. Your route shows the value of creating enough traction for people to see that change is possible.",
+      "rule": "momentum"
+    },
+    {
+      "id": "strategic-experimenter",
+      "title": "Strategic Experimenter",
+      "description": "You frequently chose focused pilots and learning-by-doing. Your route turns uncertainty into a reason to test, learn, and scale what works rather than waiting for a perfect map.",
+      "rule": "experiment"
+    }
+  ]
+}
